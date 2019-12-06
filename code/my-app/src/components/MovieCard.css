@@ -1,0 +1,41 @@
+.movie-poster {
+  display: flex;
+  margin: 0 10%;
+  border: 0.1em solid #000;
+  padding: 2%;
+}
+
+.poster-text {
+  margin-right: 10%;
+}
+
+.button-back {
+  margin: 0 10%;
+  height: 40px;
+  display: flex;
+  border: 0.1em solid #000;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 30px 0 30px 10%;
+  background-color: transparent;
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s;
+}
+.button-back:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+.link {
+  text-decoration: none;
+}
+
+img-poster {
+  height: 400px;
+}

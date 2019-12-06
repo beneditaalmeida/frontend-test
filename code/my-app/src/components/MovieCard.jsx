@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./MovieCard.css";
+import { Link } from "react-router-dom";
 
-import { Col, Card } from "react-bootstrap";
-// import MovieSearch from "./MovieSearch";
+import MovieSearch from "./MovieSearch";
 
 export default class MovieInfo extends Component {
   constructor(props) {
@@ -25,19 +26,27 @@ export default class MovieInfo extends Component {
 
   render() {
     return (
-      <div>
-        {/* <MovieSearch /> */}
-        <Card className="border-0">
-          <Col md={5}>
-            <Card.Img variant="top" src={this.state.movie.Poster} />
-
-            <Card.Body>
-              <Card.Title>{this.state.movie.Title}</Card.Title>
-              <Card.Text>{this.state.movie.Director}</Card.Text>
-              <Card.Text>{this.state.movie.Plot}</Card.Text>
-            </Card.Body>
-          </Col>
-        </Card>
+      <div className="movie">
+        <MovieSearch />
+        <Link to={`/`} className="link">
+          <button className="button-back">Go Back</button>
+        </Link>
+        <div className="movie-poster">
+          <div className="poster-text">
+            <h1 className="poster-title">{this.state.movie.Title}</h1>
+            <h3 className="poster-director">{this.state.movie.Director}</h3>
+            <p className="poster-plot">{this.state.movie.Plot}</p>
+          </div>
+          <div>
+            <figure>
+              <img
+                className="img-poster"
+                alt="poster"
+                src={this.state.movie.Poster}
+              />
+            </figure>
+          </div>
+        </div>
       </div>
     );
   }

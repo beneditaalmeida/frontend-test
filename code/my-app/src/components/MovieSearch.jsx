@@ -9,8 +9,9 @@ export default class MovieSearch extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      moviesList: [""],
-      searchMovie: ""
+      moviesList: [],
+      searchMovie: "",
+      message: false
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -46,27 +47,29 @@ export default class MovieSearch extends Component {
     return (
       <div className="container">
         <div className="header">
-          <Link to="/">
-            <img alt="logo" src="../images/cinema-logo.png" width="300px" />
-          </Link>
-          <form onSubmit={this.search}>
-            <input
-              placeholder="Search for a movie"
-              type="text"
-              onChange={this.handleChange}
-            />
-            <button type="submit">Search</button>
-          </form>
+          <div className="navigation">
+            <Link to="/">
+              <img alt="logo" src="../images/cinema-logo.png" width="300px" />
+            </Link>
+            <form onSubmit={this.search}>
+              <input
+                placeholder="Search for a movie"
+                type="text"
+                onChange={this.handleChange}
+              />
+              <button className="button-search" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
         </div>
 
         <div className="list">
-          <article>
-            {moviesList.length > 0 ? (
-              moviesList.map(movie => <MovieInfo movieID={movie} key={movie} />)
-            ) : (
-              <h3>Sorry! Can not find the movie.</h3>
-            )}
-          </article>
+          <ul>
+            {moviesList.map(movie => (
+              <MovieInfo movieID={movie} key={movie} />
+            ))}
+          </ul>
         </div>
       </div>
     );

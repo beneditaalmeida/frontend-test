@@ -28,15 +28,19 @@ export default class MovieInfo extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
-      <Link to={`/moviecard/${this.props.movieID}`}>
-        <div>
+      <Link to={`/moviecard/${this.props.movieID}`} className="link-poster">
+        <li>
+          <p className="movie-title">{this.state.movies.Title}</p>
           <figure>
-            <img alt="poster" src={this.state.movies.Poster} />
+            <img
+              className="movie-img"
+              alt="poster"
+              src={this.state.movies.Poster}
+            />
           </figure>
-          <p>{this.state.movies.Title}</p>
-          <p>{this.state.movies.Director}</p>
-        </div>
+        </li>
       </Link>
     );
   }

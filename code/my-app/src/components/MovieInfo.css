@@ -1,0 +1,28 @@
+.link-poster {
+  text-decoration: none;
+}
+
+li {
+  margin: 20px;
+  padding: 5px;
+  border: 0.1em solid #000;
+}
+
+figure {
+  display: contents;
+}
+
+.movie-img {
+  max-width: 220px;
+}
+
+.movie-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  max-width: 200px;
+  color: #fff;
+  background-color: #000;
+  padding: 10px;
+  margin: 0px 0px 5px 0px;
+}
